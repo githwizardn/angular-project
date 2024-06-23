@@ -1,0 +1,66 @@
+.navbar {
+	background-color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 120px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 5em;
+	margin: 0 auto;
+	z-index: 100;
+	font-family: "Poppins", sans-serif;
+}
+.active {
+	color: #fdca33;
+}
+.flex-row {
+	z-index: 100;
+}
+a {
+	font-weight: 900;
+	font-size: 18px;
+	line-height: 1.5;
+	color: white;
+	text-decoration: none;
+	margin: 0 10px;
+	padding: 5px 10px;
+}
+.isTransparentBg {
+	background-color: transparent;
+}
+.wrapper a:hover,
+.fa-solid:hover {
+	color: #fdca33;
+	cursor: pointer;
+}
+.fa-solid {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 30px;
+}
+.menu-big {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+}
+@media screen and (max-width: 992px) {
+	/* Hide the menu on smaller screens */
+	nav {
+		display: none;
+	}
+}
+.menu-small {
+	list-style: none;
+}
+.offcanvas {
+	background-color: #000;
+	color: #fff;
+}
+.btn-close-white {
+	color: #fff;
+	margin-top: 5px;
+	font-size: 30px;
+}

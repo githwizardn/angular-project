@@ -1,0 +1,36 @@
+.card {
+	text-align: center;
+	background-color: #000;
+	margin-right: 20px;
+}
+img {
+	margin-bottom: 30px;
+}
+h3 {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1.2;
+	color: #fff;
+}
+p {
+	color: #b8b8b8;
+}
+.price {
+	color: #ffcc33ff;
+	font-family: "Poppins", sans-serif;
+	font-weight: bold;
+}
+.carousel-nav {
+	display: flex;
+	justify-content: center;
+}
+.carousel-nav button {
+	background: 0 0;
+	color: #fff;
+	border: none;
+	margin-right: 10px;
+}
+::ng-deep .carousel-control {
+	display: none;
+}

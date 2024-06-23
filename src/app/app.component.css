@@ -1,0 +1,63 @@
+/* -------------------------------------------------------
+                     HOME
+-------------------------------------------------------- */
+
+#home {
+	min-height: 750px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.wrapper.home-content h1 {
+	margin-bottom: 30px;
+}
+
+.wrapper.home-content > div .btn {
+	margin-top: 30px;
+}
+
+/* -------------------------------------------------------
+                    OFFER
+-------------------------------------------------------- */
+
+#offer {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#offer h2 {
+	font-size: 40px;
+	margin-bottom: 20px;
+	background-image: none;
+}
+
+/* -------------------------------------------------------
+                    GALLERY
+-------------------------------------------------------- */
+
+.wrapper.flex-row.gallery-item {
+	margin-top: 50px;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+.wrapper.flex-row.gallery-item a:hover img {
+	-webkit-filter: brightness(0.5);
+	filter: brightness(0.5);
+}
+
+.wrapper.flex-row.gallery-item a img {
+	width: 100%;
+	display: block;
+}

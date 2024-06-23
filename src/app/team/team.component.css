@@ -1,0 +1,48 @@
+#chefs .wrapper.flex-row {
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.wrapper.flex-row .chefs-item img {
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.wrapper.flex-row .chefs-item .about-chefs {
+	text-align: center;
+}
+
+.wrapper.flex-row .chefs-item .about-chefs h3 {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.wrapper.flex-row .chefs-item .about-chefs p {
+	margin-bottom: 20px;
+}
+
+.about-chefs .chef-social {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.about-chefs .chef-social li {
+	float: left;
+	margin: 0 10px;
+}
+
+.about-chefs .chef-social li a {
+	display: inline-block;
+	text-decoration: none;
+	font-family: "FontAwesome" !important;
+}

@@ -1,0 +1,117 @@
+<!-- src/app/booking-form/booking-form.component.html -->
+<div class="wrapper flex-row wrapp-booking-form">
+  <div class="booking-form">
+    <form [formGroup]="reservationForm" (ngSubmit)="submitForm()">
+      <div class="wrapp-input-group flex-row">
+        <div>
+          <p><label for="name">სახელი</label></p>
+          <input
+            type="text"
+            placeholder="სახელი"
+            id="name"
+            formControlName="name"
+            required
+          />
+          <div
+            *ngIf="
+              reservationForm.get('name')?.invalid &&
+              (reservationForm.get('name')?.dirty ||
+                reservationForm.get('name')?.touched)
+            "
+          >
+            <small class="error">სახელი აუცილებელია</small>
+          </div>
+        </div>
+        <div>
+          <p><label for="lastname">გვარი</label></p>
+          <input
+            type="text"
+            placeholder="გვარი"
+            id="lastname"
+            formControlName="lastname"
+          />
+        </div>
+        <div>
+          <p><label for="phone">ტელეფონი</label></p>
+          <input
+            type="tel"
+            placeholder="ტელეფონი"
+            id="phone"
+            formControlName="phone"
+          />
+        </div>
+        <div>
+          <p><label for="email">Email</label></p>
+          <input
+            type="email"
+            placeholder="Email"
+            id="email"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              reservationForm.get('email')?.invalid &&
+              (reservationForm.get('email')?.dirty ||
+                reservationForm.get('email')?.touched)
+            "
+          >
+            <small class="error">გთხოვთ შეიყვანოთ ვალიდური Email</small>
+          </div>
+        </div>
+        <div>
+          <p><label for="date">თარიღი</label></p>
+          <input
+            type="text"
+            placeholder="dd-mm-aa"
+            id="date"
+            formControlName="date"
+          />
+        </div>
+        <div>
+          <p><label for="time">საათი</label></p>
+          <input
+            type="text"
+            placeholder="12:00 AM"
+            id="time"
+            formControlName="time"
+          />
+        </div>
+        <button type="submit" id="send" class="btn">დაჯავშნე ონლაინ</button>
+      </div>
+      <p
+        class="result mt-2"
+        [style.display]="displayResultMessage ? 'block' : 'none'"
+      >
+        <span
+          [ngClass]="{
+            error: resultMessage === 'გთხოვთ შეავსოთ ყველა ველი.',
+            send:
+              resultMessage ===
+              'მადლობა დაჯავშნისთვის. ჩვენ მალე დაგიკავშირდებით.'
+          }"
+        >
+          {{ resultMessage }}
+        </span>
+      </p>
+    </form>
+  </div>
+  <div class="working-hours">
+    <h3>გახსნის საათები</h3>
+    <p>
+      შემოგვიერთდით ჩვენს მყუდრო სივრცეში. განიცადეთ ჩვენი კულინარიული ვნება და
+      განსაკუთრებული ატმოსფერო. ვიმედოვნებთ, რომ მალე შევხვდებით!
+    </p>
+    <div class="flex-row table-hours">
+      <p>ორშაბათი - პარასკევი</p>
+      <p>8AM - 6PM</p>
+    </div>
+    <div class="flex-row table-hours">
+      <p>შაბათი</p>
+      <p>9AM - 5PM</p>
+    </div>
+    <div class="flex-row table-hours">
+      <p>კვირა</p>
+      <p>9AM - 4PM</p>
+    </div>
+  </div>
+</div>

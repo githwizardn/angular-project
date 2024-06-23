@@ -1,0 +1,59 @@
+<section id="menu">
+  <div class="title-center">
+    <h2>მენიუ</h2>
+  </div>
+  <div class="wrapper flex-row wrapp-menu">
+    <ul class="list-menu">
+      <li *ngFor="let tab of tabs">
+        <a [class.active]="activeTab === tab" (click)="setActiveTab(tab)">{{
+          tab
+        }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="wrapper wrapp-menu-item">
+    <div class="menu-item flex-row zoom-gallery">
+      <ng-container *ngFor="let item of getFilteredItems()">
+        <div class="single-menu-item" *ngIf="item.tabs.includes(activeTab)">
+          <a data-bs-toggle="modal" [attr.data-bs-target]="'#' + item.id">
+            <img src="{{ item.imageUrl }}" alt="{{ item.name }}" />
+          </a>
+          <div class="single-menu-item-content">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p class="price">{{ item.price }}</p>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          [id]="item.id"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header mb-3">
+                <button
+                  type="button"
+                  class="btn-close white"
+                  id="btn-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body d-flex justify-content-end">
+                <img
+                  src="{{ item.imageUrl }}"
+                  alt="{{ item.name }}"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

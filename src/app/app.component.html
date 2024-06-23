@@ -1,0 +1,104 @@
+<navbar></navbar>
+
+<main>
+  <section
+    id="home"
+    class="flex-row"
+    style="
+      background-image: url(https://t3.ftcdn.net/jpg/02/81/50/18/360_F_281501867_XI5OBa4UuGVxMbv5gNLCcCkPDjsX6r0U.jpg);
+    "
+  >
+    <div class="wrapper home-content">
+      <div>
+        <h1>შეუდარებელი ხარისხის საკვები</h1>
+        <p>
+          მოგესალმებით! ისიამოვნეთ ჩვენი გემრიელი საჭმლით და მყუდრო გარემოთი,
+          სადაც კულინარიული ვნება ხვდება გამორჩეულ მომსახურებას .
+        </p>
+        <button class="btn booking-scroll" (click)="scrollToBookingTable()">
+          შეუკვეთე ონლაინ
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="special-dishes">
+    <div class="title-center">
+      <h2>გამორჩეული კერძები</h2>
+      <p>
+        აღმოაჩინეთ ჩვენი გამორჩეული კერძები, საგულდაგულოდ მომზადებული რომ
+        გაახაროთ თქვენი რეცეპტორები. გემოების შერწყმა, რომელიც უნიკალური
+        კულინარიის მოგზაურობაში წაგიყვანთ..
+      </p>
+    </div>
+    <div class="wrapper">
+      <card-carousel></card-carousel>
+    </div>
+  </section>
+
+  <section id="about-us">
+    <about></about>
+  </section>
+
+  <section
+    id="offer"
+    style="
+      background-image: url(https://img.freepik.com/free-photo/burger-black_181624-884.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703289600&semt=ais);
+    "
+  >
+    <div class="wrapper">
+      <h2>
+        30% ფასდაკლება <br />
+        ყველა სახის ბურგერზე
+      </h2>
+      <a class="btn booking-scroll" (click)="scrollToBookingTable()"
+        >შეუკვეთე ონლაინ</a
+      >
+    </div>
+  </section>
+
+  <section id="chefs">
+    <team></team>
+  </section>
+
+  <menu></menu>
+
+  <section id="gallery">
+    <div class="title-center">
+      <h2>გალერეა</h2>
+    </div>
+    <div class="wrapper flex-row gallery-item zoom-gallery">
+      <a href="https://restfood.onlywebcoding.com.ua/images/gallery-1.jpg">
+        <img src="https://restfood.onlywebcoding.com.ua/images/gallery-1.jpg" />
+      </a>
+      <a href="https://restfood.onlywebcoding.com.ua/images/gallery-2.jpg">
+        <img src="https://restfood.onlywebcoding.com.ua/images/gallery-2.jpg" />
+      </a>
+      <a href="https://restfood.onlywebcoding.com.ua/images/gallery-3.jpg">
+        <img src="https://restfood.onlywebcoding.com.ua/images/gallery-3.jpg" />
+      </a>
+      <a href="https://restfood.onlywebcoding.com.ua/images/gallery-4.jpg">
+        <img src="https://restfood.onlywebcoding.com.ua/images/gallery-4.jpg" />
+      </a>
+      <a href="https://restfood.onlywebcoding.com.ua/images/gallery-5.jpg">
+        <img src="https://restfood.onlywebcoding.com.ua/images/gallery-5.jpg" />
+      </a>
+      <a href="https://restfood.onlywebcoding.com.ua/images/gallery-6.jpg">
+        <img src="https://restfood.onlywebcoding.com.ua/images/gallery-6.jpg" />
+      </a>
+    </div>
+  </section>
+
+  <section id="booking-table">
+    <div class="title-center">
+      <h2>დაჯავშნე მაგიდა</h2>
+    </div>
+    <booking-form></booking-form>
+  </section>
+</main>
+
+<footer id="contacts"></footer>
+
+<a class="btn" id="scroll-top" href="#" *ngIf="hasScrolledPastHome">
+  <i class="fa-solid fa-arrow-up-long"></i>
+</a>

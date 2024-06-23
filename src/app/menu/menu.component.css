@@ -1,0 +1,71 @@
+#menu {
+	background-repeat: repeat;
+}
+
+.wrapper.flex-row.wrapp-menu {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.wrapper.flex-row.wrapp-menu .list-menu li {
+	float: left;
+	margin: 10px;
+}
+
+.wrapper.flex-row.wrapp-menu .list-menu li:hover {
+	cursor: pointer;
+}
+
+.wrapper.flex-row.wrapp-menu .list-menu li a {
+	text-decoration: none;
+	display: inline-block;
+	text-transform: uppercase;
+	color: #000;
+	padding: 8px 16px;
+	font-weight: bold;
+}
+
+.wrapper.wrapp-menu-item {
+	margin-top: 50px;
+}
+
+.menu-item.flex-row {
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+.menu-item.flex-row .single-menu-item {
+	margin-right: 20px;
+}
+
+.menu-item.flex-row .single-menu-item a {
+	display: block;
+	margin-bottom: 30px;
+}
+
+.menu-item.flex-row .single-menu-item a:hover img {
+	-webkit-filter: brightness(0.5);
+	filter: brightness(0.5);
+}
+
+.menu-item.flex-row .single-menu-item a img {
+	display: block;
+	width: 100%;
+}
+
+.single-menu-item-content {
+	text-align: center;
+}
+
+.single-menu-item-content h3,
+.single-menu-item-content p {
+	margin-bottom: 20px;
+}
+.modal-content {
+	background-color: transparent;
+}
+#btn-white {
+	color: #fff;
+}
