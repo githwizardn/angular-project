@@ -2,6 +2,10 @@
 	background-repeat: repeat;
 }
 
+.error {
+	color :antiquewhite
+}
+
 .wrapper.flex-row.wrapp-booking-form {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;

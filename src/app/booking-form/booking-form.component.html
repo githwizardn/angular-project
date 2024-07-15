@@ -1,13 +1,12 @@
-<!-- src/app/booking-form/booking-form.component.html -->
 <div class="wrapper flex-row wrapp-booking-form">
   <div class="booking-form">
     <form [formGroup]="reservationForm" (ngSubmit)="submitForm()">
       <div class="wrapp-input-group flex-row">
         <div>
-          <p><label for="name">სახელი</label></p>
+          <p><label for="name">Name / სახელი</label></p>
           <input
             type="text"
-            placeholder="სახელი"
+            placeholder="Name / სახელი"
             id="name"
             formControlName="name"
             required
@@ -19,26 +18,54 @@
                 reservationForm.get('name')?.touched)
             "
           >
-            <small class="error">სახელი აუცილებელია</small>
+            <small class="error">
+              Name / სახელი აუცილებელია, მინიმუმ 2 ასო , შეიძლება შეიცავდეს
+              ქართულ და ინგლისურ ასოებს
+            </small>
           </div>
         </div>
         <div>
-          <p><label for="lastname">გვარი</label></p>
+          <p><label for="lastname">Lastname / გვარი</label></p>
           <input
             type="text"
-            placeholder="გვარი"
+            placeholder="Lastname / გვარი"
             id="lastname"
             formControlName="lastname"
+            required
           />
+          <div
+            *ngIf="
+              reservationForm.get('lastname')?.invalid &&
+              (reservationForm.get('lastname')?.dirty ||
+                reservationForm.get('lastname')?.touched)
+            "
+          >
+            <small class="error">
+              Lastname / გვარი აუცილებელია, მინიმუმ 2 ასო , შეიძლება შეიცავდეს
+              ქართულ და ინგლისურ ასოებს
+            </small>
+          </div>
         </div>
         <div>
-          <p><label for="phone">ტელეფონი</label></p>
+          <p><label for="phone">Phone / ტელეფონი</label></p>
           <input
             type="tel"
-            placeholder="ტელეფონი"
+            placeholder="Phone / ტელეფონი"
             id="phone"
             formControlName="phone"
+            required
           />
+          <div
+            *ngIf="
+              reservationForm.get('phone')?.invalid &&
+              (reservationForm.get('phone')?.dirty ||
+                reservationForm.get('phone')?.touched)
+            "
+          >
+            <small class="error"
+              >Phone / ტელეფონი აუცილებელია, შეიყვანეთ 9 ციფრი</small
+            >
+          </div>
         </div>
         <div>
           <p><label for="email">Email</label></p>
@@ -47,6 +74,7 @@
             placeholder="Email"
             id="email"
             formControlName="email"
+            required
           />
           <div
             *ngIf="
@@ -55,28 +83,50 @@
                 reservationForm.get('email')?.touched)
             "
           >
-            <small class="error">გთხოვთ შეიყვანოთ ვალიდური Email</small>
+            <small class="error">გთხოვთ შეიყვანეთ სწორი Email</small>
           </div>
         </div>
         <div>
-          <p><label for="date">თარიღი</label></p>
+          <p><label for="date">Date / თარიღი</label></p>
           <input
-            type="text"
-            placeholder="dd-mm-aa"
+            type="date"
+            placeholder="DD-MM-YYYY"
             id="date"
             formControlName="date"
+            required
           />
+          <div
+            *ngIf="
+              reservationForm.get('date')?.invalid &&
+              (reservationForm.get('date')?.dirty ||
+                reservationForm.get('date')?.touched)
+            "
+          >
+            <small class="error">გთხოვთ შეიყვანეთ სწორი თარიღი</small>
+          </div>
         </div>
         <div>
-          <p><label for="time">საათი</label></p>
+          <p><label for="time">Time / საათი</label></p>
           <input
-            type="text"
-            placeholder="12:00 AM"
+            type="time"
+            placeholder="12:00"
             id="time"
             formControlName="time"
+            required
           />
+          <div
+            *ngIf="
+              reservationForm.get('time')?.invalid &&
+              (reservationForm.get('time')?.dirty ||
+                reservationForm.get('time')?.touched)
+            "
+          >
+            <small class="error"
+              >გთხოვთ შეიყვანეთ სწორი საათი(HH:mm ფორმატით)</small
+            >
+          </div>
         </div>
-        <button type="submit" id="send" class="btn">დაჯავშნე ონლაინ</button>
+        <button type="submit" id="send" class="btn">დადასტურება</button>
       </div>
       <p
         class="result mt-2"
@@ -84,10 +134,10 @@
       >
         <span
           [ngClass]="{
-            error: resultMessage === 'გთხოვთ შეავსოთ ყველა ველი.',
+            error: resultMessage === 'გთხოვთ ყველა ველი სწორად შეავსოთ.',
             send:
               resultMessage ===
-              'მადლობა დაჯავშნისთვის. ჩვენ მალე დაგიკავშირდებით.'
+              'მადლობა შეკვეთისთვის , ჩვენ მალე დაგიკავშრდებით.'
           }"
         >
           {{ resultMessage }}
@@ -96,22 +146,22 @@
     </form>
   </div>
   <div class="working-hours">
-    <h3>გახსნის საათები</h3>
+    <h3>სამუშაო საათები</h3>
     <p>
-      შემოგვიერთდით ჩვენს მყუდრო სივრცეში. განიცადეთ ჩვენი კულინარიული ვნება და
-      განსაკუთრებული ატმოსფერო. ვიმედოვნებთ, რომ მალე შევხვდებით!
+      გვეწვიეთ ჩვენს მყუდრო სივრცეში. განიცადეთ ჩვენი კულინარიული ვნება და
+      უნიკალური ატმოსფერო. ჩვენ მოუთმენლად ველით თქვენთან შეხვედრას!
     </p>
     <div class="flex-row table-hours">
       <p>ორშაბათი - პარასკევი</p>
-      <p>8AM - 6PM</p>
+      <p>8:00 - 18:00</p>
     </div>
     <div class="flex-row table-hours">
       <p>შაბათი</p>
-      <p>9AM - 5PM</p>
+      <p>9:00 - 17:00</p>
     </div>
     <div class="flex-row table-hours">
       <p>კვირა</p>
-      <p>9AM - 4PM</p>
+      <p>9:00 - 16:00</p>
     </div>
   </div>
 </div>
