@@ -15,7 +15,7 @@ import {CarouselComponent, CarouselConfig} from "ngx-bootstrap/carousel";
 export class CardCarouselComponent implements OnInit {
 	cards: {img: string; title: string; description: string; price: string}[] = [
 		{
-			img: "https://achuqe.ge/wp-content/uploads/2020/11/poster-53.jpg",
+			img: "https://gemrielia.ge/media/_thumb/uploads/2022/05-23/281166343-598859777890284-2774930301506922016-n-1653305333.webp",
 			title: " ტორტი ",
 			description: "ტკბილი სიამოვნება.",
 			price: "13₾",

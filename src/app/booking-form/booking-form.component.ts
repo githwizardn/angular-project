@@ -38,7 +38,7 @@ export class BookingFormComponent {
       this.resultMessage = "გთხოვთ შეავსოთ ყველა ველი სწორად.";
       this.displayResultMessage = true;
     } else {
-      this.dummyApiService.submitForm('auth/RESOURCE', this.reservationForm.value)
+      this.dummyApiService.submitForm('objects', this.reservationForm.value)
         .subscribe(
           response => {
             this.resultMessage = "მადლობა თქვენი შეკვეთისთვის, ჩვენ მალე დაგიკავშრდებით.";
